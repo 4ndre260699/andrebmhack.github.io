@@ -1,0 +1,556 @@
+/*
+  Estilo de Pagina Web con CSS
+*/  
+  
+  *{
+      box-sizing: border-box;
+      margin: 0;
+  }
+
+  html{
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: #2b2d42;
+    margin: 0;
+    transition: .3s ease all;
+
+  }
+
+  body.light{
+    background-color: #bacdb0;
+    color: #1a1b26;
+  }
+
+  ul {
+    list-style: none;
+  }
+
+  h1{
+    font-size: 3.5em;
+    color: #fb6f92;
+  }
+
+  h2 {
+    font-size: 2em;
+    color: #fb6f92;
+  }
+
+  h3 {
+    font-size: 2em;
+    color: #50fa7b;
+  }
+
+  p{
+    color: #a9b1d6;
+    font-size: 1.15em;
+  }
+
+  body.light p {
+    color: #1a1b26;
+  }  
+
+  li{
+    font-size: 1.25em;
+  }
+
+  button{
+    background-color: #fb6f92;
+  }
+
+  
+  /* Estilos para el mood */
+
+  .mood{
+    background: #06d6a0;
+    color: #e0e2db;
+    border-radius: 1000px;
+    padding: 10px 18px;
+    align-items: center;
+    border: none;
+    display: flex;
+    position: relative;
+    cursor: pointer;
+    outline: none;
+    &::after{
+      content: "";
+      display: block;
+      width: 38px;
+      height: 38px;
+      position: absolute;
+      background: #bacdb0;
+      top: 0;
+      left: unset;
+      right: 0;
+      border-radius: 100px;
+      transition: .3s ease all;
+      box-shadow: 0px 0px 2px 2px rgba(0,0,0,.2);
+    }
+
+    &.active{
+      background: #fb6f92;
+      color: #e0e2db;
+      &::after{
+        right: unset;
+        left: 0;
+      }
+    }
+
+    span{
+      font-size: 1.5em;
+      width: 30px;
+      height: 30px;
+      line-height: 30px;
+      display: block;
+      background: none;
+      color: #a3a3af;
+      padding: 0 5px;
+    }
+  }
+
+  .mood:hover{
+    background: #06d6a0;
+  }
+
+  /* Logo */
+header .logo {
+  margin: 0;
+  border-radius: 0px;
+  font-size: 2.0em;
+  padding: 15px 17px;
+  font-weight: bold;
+  color: #fb6f92;
+  background-color: #1a1b26;
+  cursor: pointer;
+  display: block;
+  transition: .3s ease all;
+  outline: none;
+  border: none;
+}
+
+body.light header .logo {
+  background: #495057;
+  color: #06d6a0;
+}
+
+header .logo:hover {
+  color: #e0e2db;
+}
+    
+  
+  /* Estilos para el encabezado */
+  header {
+      background-color: #1a1b26;
+    }
+
+    body.light header{
+      background-color: #495057;
+    }
+  
+
+  header a{
+    padding: 10px 18px;
+    text-decoration: none;
+    color: #e0e2db;
+    font-weight: bold;
+  }
+  header .mood{
+    position: absolute;
+    top: 15px;
+    right: 50px;
+  }
+  
+  header a:hover{
+    color: #ffb3c6;
+  }
+
+  header .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  header nav{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding-bottom: 25px;
+    
+  }
+
+  #hero{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    height: 100vh;
+    color: white;
+    background-image: linear-gradient(
+      0deg,
+      rgba(0,0,0,0.5),
+      rgba(0,0,0,0.5)
+    )
+    ,url("/img/bienvenida.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+  }
+  body.light #hero{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    height: 100vh;
+    color: white;
+    background-image: linear-gradient(
+      0deg,
+      rgba(0,0,0,0.5),
+      rgba(0,0,0,0.5)
+    )
+    ,url("/img/bienvenida-light.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+  }
+
+  #hero h1 {
+    color: #06d6a0;
+    font-size: 3em;
+  }
+
+  body.light #hero h1{
+    color: #50fa7b;
+  }
+
+  #presentacion .container{
+    text-align: center;
+    padding: 200px 12px;
+    
+  }
+
+  #secciones{
+    background-color:  #2b2d42;
+    color: #1a1b26;
+    text-align: center;
+  }
+
+  body.light #secciones{
+    background: #bacdb0;
+  }
+  
+  body.light #secciones p{
+    
+    color: #bcb8b1;
+  }
+  #secciones .container{
+    padding: 100px 0px;
+  }
+
+  #secciones h2{
+    margin-top: 0;
+    font-size: 2em;
+  }
+
+  #secciones p{
+    display: none;
+  }
+
+  /* Cartas */
+  
+  #secciones .carta{
+        background-position: center center;
+        background-size: cover;
+        padding: 40px;
+        margin: 40px;
+        border-radius: 10px;
+  }
+  
+  body.light #secciones .carta {
+    background-color: #bcb8b1;
+    color: #e0e2db;
+  }
+
+  #secciones .cartita{
+    font-size: 1em;   
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: 2px solid rgba(0,0,0,0.3);
+    box-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+    color: #fdfdff;
+    
+  }
+
+  #link{
+    font-size: 2em;
+    color: #e0e2db;
+
+  }
+
+  .carta:first-child{
+      background-image: linear-gradient(
+       0deg,
+        rgba(0,0,0,0.5),
+        rgba(0,0,0,0.5)
+      )
+        ,url("/img/apuntes.jpg");
+  }
+
+  .carta:nth-child(2){
+    background-image: linear-gradient(
+      0deg,
+      rgba(0,0,0,0.5),
+      rgba(0,0,0,0.5)
+    )
+    ,url("/img/proyectos.jpg");
+  }
+
+  .carta:nth-child(3){
+    background-image: linear-gradient(
+      0deg,
+      rgba(0,0,0,0.5),
+      rgba(0,0,0,0.5)
+    )
+    ,url("/img/SO.png");
+  }
+  .carta:nth-child(4){
+    background-image: linear-gradient(
+      0deg,
+      rgba(0,0,0,0.5),
+      rgba(0,0,0,0.5)
+    )
+    ,url("/img/ciberseguridad.jpg");
+  }
+
+  
+  .container {
+      max-width: 1400px;
+      margin: auto;
+  }
+  
+  .color-acento{
+    color: #ff0a54;
+  }
+
+  #conoceme .container{
+    text-align: center;
+    padding: 250px 12px;
+  }
+
+  #conoceme li{
+    margin: 16px 0px;
+    font-weight: bold;
+    color: #e0e2db;
+  }
+  body.light #conoceme li{
+    color: #1a1b26;
+  }
+  
+
+  #caracteristicas .container{
+    text-align: center;
+    padding: 250px 12px;
+  }
+
+  #caracteristicas li{
+    margin: 16px 0px;
+    font-weight: bold;
+    color: #ffb3c6;
+  }
+
+  body.light #caracteristicas li {
+    color: #000000; /* Color de letras para modo claro (negro) */
+  }
+
+  footer {
+    background-color:  #1a1b26;
+
+  }
+  body.light footer{
+    background: #495057;
+  }
+
+  footer p{
+    margin: 0;
+    padding: 12px;
+    color: #a9b1d6;
+  }
+  body.light footer p{ 
+      color: #e0e2db;
+  }
+  footer .container{
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+  }
+
+@media (min-width: 720px){
+    
+    header{
+      position: fixed;
+      width: 100%;
+    }
+
+    header .container{
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    header nav{
+      flex-direction: row;
+      padding-bottom: 0;
+      padding-right: 20px;
+    }
+
+    #presentacion .container{
+      display: flex;
+      justify-content: space-evenly;
+    }
+
+    #presentacion .texto{
+      width: 50%;
+      max-width: 600px;
+      text-align: initial;
+      padding-left: 50px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    #presentacion h2{
+      margin-top: 0;
+    }
+
+    #presentacion .img-container{
+      height: 400px;
+      width: 500px;
+      background-size: cover;
+      background-position: center center;
+      background-image: linear-gradient(
+      0deg,
+      rgba(0,0,0,0.5),
+      rgba(0,0,0,0.5)
+    ), url("/img/hacker.jpg")
+    }
+
+
+    /* Secciones */
+
+
+    #secciones .programas{
+      display: flex;
+      justify-content: center;
+    }
+
+    #secciones p{
+      display: block;
+      margin-bottom: 30px;
+    }
+
+    #secciones h3{
+      margin-top: 0; 
+    }
+
+    #secciones h2{
+      font-size: 4em;
+    }
+
+    #secciones .carta{
+      padding: 60px;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position-y: 0;
+      background-color: rgba(80,80,80);
+      box-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+    }
+
+    .carta:first-child{
+      background-image: linear-gradient(
+       0deg,
+        rgba(0,0,0,0.5),
+        rgba(0,0,0,0.5)
+      )
+        ,url("/img/apuntes.jpg");
+  }
+
+  .carta:nth-child(2){
+    background-image: linear-gradient(
+      0deg,
+      rgba(0,0,0,0.5),
+      rgba(0,0,0,0.5)
+    )
+    ,url("/img/proyectos.jpg");
+  }
+
+  .carta:nth-child(3){
+    background-image: linear-gradient(
+      0deg,
+      rgba(0,0,0,0.5),
+      rgba(0,0,0,0.5)
+    )
+    ,url("/img/TiposSO.jpeg ");
+  }
+  .carta:nth-child(4){
+    background-image: linear-gradient(
+      0deg,
+      rgba(0,0,0,0.5),
+      rgba(0,0,0,0.5)
+    )
+    ,url("/img/ciberseguridad.jpg");
+  }
+
+  /* Conoceme */
+
+  #conoceme{
+      background-image: url("/img/hacker-laptop.jpg");
+      background-repeat: no-repeat;
+      background-size: 700px 480px;
+      background-position: 900px 120px;
+  }
+
+  #conoceme .container{
+    text-align: initial;
+  }
+
+  #conoceme ul{
+    margin-left: 100px;
+  }
+
+  conoceme.light li{
+    color: #1a1b26;
+  }
+ 
+  /* Caracteristicas */
+
+  #caracteristicas{
+    background-image: url("/img/hack.jpg");
+    background-repeat: no-repeat;
+    background-size: 600px 380px;
+    background-position: calc(100vw - 500px) 120px;
+  }
+
+  #caracteristicas .container{
+    text-align: initial;
+  }
+
+  #caracteristicas ul{
+    margin-left: 100px;
+  }
+
+  footer .container{
+    align-items: flex-end;
+    padding: 18px;
+  };
+
+}
+
+@media (min-width: 1200px) {
+  #caracteristicas{
+    background-position: calc(100vw - 800px);
+  }
+}
+
